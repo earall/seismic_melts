@@ -169,8 +169,8 @@ end
 %Summing the separate densities according to area fraction
 if strcmp (model, {'ISO','SHP'})
     rho_agg = sum(rho(1:length(phase_names)).*af(1:length(phase_names)));
-    rho_melt = sum(rho(1+length(phase_names):end). ...
-        *af((1+length(phase_names):end)));
+    rho_melt = sum(rho(1+length(phase_names):end)...
+        .*af((1+length(phase_names):end)));
 else
     rho_agg = sum(af.*rho);
     rho_melt = 2.43;
