@@ -45,12 +45,7 @@ mtexFig = mtexFigure('position',[0 0 300 2000]);
 mtexFig.ncols  = 6;
 mtexFig.nrows  = 1;
 
-% setting maximum values for colourbars
-% vp, vs1 and vs2:
-Vpmax = ceil(max(velocity{1}));
-Vsmax = ceil(max(max(velocity{2}), max(velocity{3})));
-AVmax = ceil(max(velocity{4}));
-VVmax = ceil(max(max(velocity{5}), max(velocity{6})));
+
 
 %%
 for i = 1:6
@@ -87,16 +82,22 @@ for i = 1:6
         annotate([xvector,yvector,zvector],'label',{'X','Z','Y'},...
             'FontSize',18,'BackgroundColor','w');
 
-        % set axis limits
-        if i == 1
-            caxis([0,Vpmax])
-        elseif i == 2 || i == 3
-            caxis([0,Vsmax])
-        elseif i == 4
-            caxis([0,AVmax])
-        else
-            caxis([0,VVmax])
-        end
+        
+        caxis([minV,maxV])
+        % uncomment to set axis with the same limits
+%         if i == 1
+%             caxis([floor(minV),ceil(maxV)])
+%         elseif i == 2 || i == 3
+%             Vsmax = max(max(velocity{2}), max(velocity{3}));
+%             Vsmin = min(min(velocity{2}), min(velocity{3}));
+%             caxis([floor(Vsmin),ceil(Vsmax)])
+%         elseif i == 4
+%             caxis([floor(minV),ceil(maxV)])
+%         else
+%             VVmax = max(max(velocity{5}), max(velocity{6}));
+%             VVmin = min(min(velocity{5}), min(velocity{6}));
+%             caxis([floor(VVmin),ceil(VVmax)])
+%         end
         
     % next axis
     if i == 6
