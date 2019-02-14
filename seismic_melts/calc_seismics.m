@@ -20,36 +20,30 @@ function [seismics,CSTeff] = calc_seismics(ebsd, phase_names, melt,...
 %
 %% **************************************************************
 %
-    
-for i = 1:length(ebsd)
 
-    C_Voigt{i} = c_tensor(ebsd{i}, phase_names{i});
+C_Voigt = c_tensor(ebsd, phase_names);
 
-    CSTeff{1}{i} = tensor_iso(ebsd{i}, C_Voigt{i}, phase_names{i},...
-        melt(i), bound); % No fabric model
-    CSTeff{2}{i} = tensor_shp(ebsd{i}, C_Voigt{i}, phase_names{i},...
-        melt(i), 0.01, 90, bound); % Shape fabric model: horizontal 
-                                   % horizontal oblate melt inclusions
-    CSTeff{3}{i} = tensor_shp(ebsd{i}, C_Voigt{i}, phase_names{i},...
-        melt(i), 0.01, 0,  bound); % Shape fabric model:  
-                                   % vertical oblate melt inclusions
-    CSTeff{4}{i} = tensor_shp(ebsd{i}, C_Voigt{i}, phase_names{i},...
-        melt(i), 100,  0,  bound); % Shape fabric model:
-                                   % horizontal prolate melt inclusions
-    CSTeff{5}{i} = tensor_shp(ebsd{i}, C_Voigt{i}, phase_names{i},...
-        melt(i), 100,  90, bound); % Shape fabric model:
-                                   % vertical prolate melt inclusions
-    CSTeff{6}{i} = tensor_bac(ebsd{i}, C_Voigt{i}, phase_names{i},...
-        melt(i), bound); % Layered fabric model
-    CSTeff{7}{i} = tensor_cpo(ebsd{i}, C_Voigt{i}, phase_names{i},...
-        melt(i), bound); % Crystal fabric model
-end
+% No fabric model
+CSTeff{1} = tensor_iso(ebsd, C_Voigt, phase_names,melt, bound); 
+% Shape fabric model: horizontal oblate melt inclusions
+CSTeff{2} = tensor_shp(ebsd, C_Voigt, phase_names,melt, 0.01, 90, bound); 
+% Shape fabric model: vertical oblate melt inclusions
+CSTeff{3} = tensor_shp(ebsd, C_Voigt, phase_names,melt, 0.01, 0,  bound);
+% Shape fabric model: horizontal prolate melt inclusions
+CSTeff{4} = tensor_shp(ebsd, C_Voigt, phase_names,melt, 100,  0,  bound);
+% Shape fabric model: vertical prolate melt inclusions
+CSTeff{5} = tensor_shp(ebsd, C_Voigt, phase_names,melt, 100,  90, bound);
+% Layered fabric model
+CSTeff{6} = tensor_bac(ebsd, C_Voigt, phase_names,melt, bound); 
+% Crystal fabric model
+CSTeff{7} = tensor_cpo(ebsd, C_Voigt, phase_names,melt, bound); 
+
 
 % Calculate seismic properties
+
 for i = 1:7
-    for j = 1:length(ebsd)
-        seismics{i}(j,:) = calc_velocity(CSTeff{i}{j}, melt(j), direction);
-    end
+    seismics(i,:) = calc_velocity(CSTeff{i}, melt(i), direction);
 end
+
 
 end
