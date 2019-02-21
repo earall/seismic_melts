@@ -22,6 +22,7 @@ function [ebsd, CS, phase_names, sample_name] = get_ebsd(filename)
 % 
 %
 %   Please direct all questions to A. L. Lee
+%	Copyright (c) 2019 Amicia Lee, see LICENSE
 %
 %% ***********************************************************************
 %

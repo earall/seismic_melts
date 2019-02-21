@@ -24,6 +24,7 @@ function [C_Voigt, C_Reuss] = c_tensor( ebsd, phase_names )
 %   C_Reuss - Reuss C tensor for each phase listed as a cell array
 % 
 %   Please direct all questions to A. L. Lee
+%	Copyright (c) 2019 Amicia Lee, see LICENSE
 %
 %% ***********************************************************************
 

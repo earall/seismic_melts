@@ -24,6 +24,7 @@ function [CTeff, rho] = tensor_melt(ebsd, CT, model, phase_names, melt, bound, d
 %   rho - aggregate density
 %
 %   Please direct all questions to A. L. Lee
+%	Copyright (c) 2019 Amicia Lee, see LICENSE
 %
 %   
 %% ***********************************************************************

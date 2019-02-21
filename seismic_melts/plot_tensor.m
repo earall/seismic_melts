@@ -17,7 +17,7 @@ function plot_tensor(velocity,sample_name, path)
 %   vp/vs1 and vp/vs2
 %
 %   Please direct all questions to A. L. Lee
-%
+%	Copyright (c) 2019 Amicia Lee, see LICENSE
 %   
 %% ***********************************************************************
 %

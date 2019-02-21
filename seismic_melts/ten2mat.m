@@ -12,6 +12,7 @@ function C_mat = ten2mat(C_tensor)
 %   C_mat - Matrix
 % 
 %   Please direct all questions to A. L. Lee
+%	Copyright (c) 2019 Amicia Lee, see LICENSE
 %
 %   
 %% ***********************************************************************

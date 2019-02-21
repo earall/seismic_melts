@@ -19,7 +19,7 @@ function [melt_frac] = melt_fraction(phase_names, af, melt )
 %   area fractions fot the 'solid' phases
 %
 %   Please direct all questions to A. L. Lee
-%
+%	Copyright (c) 2019 Amicia Lee, see LICENSE
 %   
 %% ***********************************************************************
 %   

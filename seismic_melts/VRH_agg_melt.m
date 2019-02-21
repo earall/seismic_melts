@@ -37,6 +37,7 @@ function [C_matrix, rho_agg, C_melt, rho_melt] =...
 %   rho_melt - Density for the melted portion of the rock
 % 
 %   Please direct all questions to A. L. Lee
+%	Copyright (c) 2019 Amicia Lee, see LICENSE
 %
 %
 %% ***********************************************************************

@@ -19,7 +19,9 @@ function [CS, phase_names] = get_symmetry(filename)
 %   OUTPUT
 %   CS - Crystal symmetries for the file
 %   phase_names - List of phases within the sample
-% 
+% 	
+%   Please direct all questions to A. L. Lee
+%	Copyright (c) 2019 Amicia Lee, see LICENSE
 %
 %% ***********************************************************************
 % Opens ctf file

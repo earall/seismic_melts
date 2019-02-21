@@ -12,6 +12,8 @@ function [C_Tensor_out ] = force_symmetry( C_Tensor_in )
 %   OUTPUT
 %   C_Tensor_out - the tensor is now symmetric if it was not before
 % 
+%   Please direct all questions to A. L. Lee
+%	Copyright (c) 2019 Amicia Lee, see LICENSE
 % 
 %% ***********************************************************************
 %

@@ -33,6 +33,7 @@ function [M, rho, CS] = get_phase_data(phase)
 %   If phase not present in database - 'ERROR'
 %
 %   Please direct all questions to A. L. Lee
+%	Copyright (c) 2019 Amicia Lee, see LICENSE
 %
 %% ***********************************************************************
 %

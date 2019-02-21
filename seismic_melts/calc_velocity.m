@@ -24,6 +24,7 @@ function [seismics] = calc_velocity(CSTeff, melt, direction)
 %              vp, vs1, vs2, avs, vpvs1, vpvs2, ps1, ps2
 %
 %   Please direct all questions to A. L. Lee
+%	Copyright (c) 2019 Amicia Lee, see LICENSE
 %
 %% ***********************************************************************
 %
